@@ -122,7 +122,7 @@ export class CompanyChangeComponent implements OnInit {
     }
   }
 
-  private createNotification() {
+  private createNotification(): void {
     const notification: Notification = {
       id: this.company.id,
       description: NotificationDescription.UPDATE_DESCRIPTION,

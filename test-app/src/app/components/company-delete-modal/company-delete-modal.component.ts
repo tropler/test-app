@@ -56,7 +56,7 @@ export class CompanyDeleteModalComponent {
     });
   }
 
-  private createNotification() {
+  private createNotification(): void {
     const notification: Notification = {
       id: this.companyId,
       description: NotificationDescription.DELETE_DESCRIPTION,

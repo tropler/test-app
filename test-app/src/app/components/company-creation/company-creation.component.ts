@@ -99,7 +99,7 @@ export class CompanyCreationComponent implements OnInit {
     }
   }
 
-  private createNotification(id: number) {
+  private createNotification(id: number): void {
     const notification: Notification = {
       id: id,
       description: NotificationDescription.CREATE_DESCRIPTION,
