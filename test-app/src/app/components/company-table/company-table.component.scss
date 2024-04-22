@@ -1,0 +1,11 @@
+.company-table__actions-button {
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+
+  &:hover {
+    background: rgba(27, 31, 59, 0.14);
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+}

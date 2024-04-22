@@ -1,0 +1,33 @@
+<button
+  size="m"
+  tuiButton
+  type="button"
+  class="company-delete-modal__open-button"
+  (click)="showDialog(template)"
+>
+  <tui-svg src="tuiIconTrash2"></tui-svg>
+</button>
+
+<ng-template #template let-observer>
+  <p>Вы уверены, что хотите удалить '{{ companyFullName }}'?</p>
+
+  <button
+    size="m"
+    tuiButton
+    type="button"
+    class="tui-space_right-3 company__button company-delete-modal__yes-button"
+    (click)="deleteCompany()"
+  >
+    Да
+  </button>
+
+  <button
+    class="company__button"
+    size="m"
+    tuiButton
+    type="button"
+    (click)="observer.complete()"
+  >
+    Нет
+  </button>
+</ng-template>

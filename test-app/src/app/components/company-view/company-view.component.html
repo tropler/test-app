@@ -1,0 +1,22 @@
+<button class="company__back-button" routerLink="/">Вернуться к таблице</button>
+
+<div>
+  <h2>{{ company.fullName }}</h2>
+  <h3>{{ company.shortName }}</h3>
+
+  <div>
+    <p>ИНН: {{ company.inn }}</p>
+    <p>КПП: {{ company.kpp }}</p>
+  </div>
+
+  <div>
+    <p>Почтовый адрес: {{ company.postAddress }}</p>
+    <p>Фактический адрес: {{ company.factAddress }}</p>
+    <p>
+      Адреса совпадают:
+      <tui-svg
+        [src]="company.isAddressEq ? 'tuiIconCheck' : 'tuiIconClose'"
+      ></tui-svg>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+.notification-block__wrapper {
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  bottom: 0;
+  width: 284px;
+  height: 176px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  overflow: hidden;
+}
+
+.notification-block__notification {
+  position: relative;
+
+  width: 260px;
+  margin: 8px 12px;
+  height: 42px;
+
+  border-radius: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &--DELETE {
+    background-color: #fee;
+    border: 1px solid #edd;
+    color: #a66;
+  }
+
+  &--CREATE {
+    background-color: #efe;
+    border: 1px solid #ded;
+    color: #9a9;
+  }
+
+  &--UPDATE {
+    background-color: #eff;
+    border: 1px solid #dee;
+    color: #9aa;
+  }
+}
+
+.notification-block__notification-close {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  color: black;
+  cursor: pointer;
+}

@@ -1,0 +1,16 @@
+<div class="notification-block__wrapper">
+  @for(notification of notificationsList; track $index) {
+  <div
+    class="notification-block__notification"
+    [class]="'notification-block__notification--' + notification.type"
+  >
+    <p>{{ notification.description }}</p>
+
+    <tui-svg
+      (click)="deleteNotification(notification.id)"
+      class="notification-block__notification-close"
+      src="tuiIconClose"
+    ></tui-svg>
+  </div>
+  }
+</div>

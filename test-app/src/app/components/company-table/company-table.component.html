@@ -1,0 +1,89 @@
+<button
+  tuiButton
+  type="button"
+  routerLink="company/create"
+  class="tui-space_right-3 tui-space_bottom-3 company__add-new-button"
+>
+  Добавить новую запись
+</button>
+
+<table tuiTable [columns]="columns">
+  <thead>
+    <tr tuiThGroup>
+      @for (columnName of columns; track $index) {
+      <th tuiTh>
+        {{ columnName }}
+      </th>
+      }
+    </tr>
+  </thead>
+
+  <tbody tuiTbody [data]="companiesList">
+    @for(company of companiesList; track $index) {
+    <tr tuiTr>
+      <td tuiTd *tuiCell="'Id'">
+        {{ company.id }}
+      </td>
+
+      <td tuiTd *tuiCell="'Full name'">
+        {{ company.fullName }}
+      </td>
+
+      <td tuiTd *tuiCell="'Short name'">
+        {{ company.shortName }}
+      </td>
+
+      <td tuiTd *tuiCell="'INN'">
+        {{ company.inn }}
+      </td>
+
+      <td tuiTd *tuiCell="'KPP'">
+        {{ company.kpp }}
+      </td>
+
+      <td tuiTd *tuiCell="'Post Address'">
+        {{ company.postAddress }}
+      </td>
+
+      <td tuiTd *tuiCell="'Fact Address'">
+        {{ company.factAddress }}
+      </td>
+
+      <td tuiTd *tuiCell="'Is Address Equal'">
+        <tui-svg
+          [src]="company.isAddressEq ? 'tuiIconCheck' : 'tuiIconClose'"
+        ></tui-svg>
+      </td>
+
+      <td tuiTd *tuiCell="'Actions'">
+        <button
+          tuiButton
+          type="button"
+          [routerLink]="['company', company.id]"
+          class="tui-space_right-3 company-table__actions-button"
+        >
+          <tui-svg src="tuiIconEye"></tui-svg>
+        </button>
+        <button
+          tuiButton
+          type="button"
+          [routerLink]="['company', 'change', company.id]"
+          class="tui-space_right-3 company-table__actions-button"
+        >
+          <tui-svg src="tuiIconEdit3"></tui-svg>
+        </button>
+        <app-company-delete-modal
+          [companyId]="company.id"
+          [companyFullName]="company.fullName"
+          (companyDelete)="updateCompaniesList()"
+        ></app-company-delete-modal>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
+
+<!-- <tui-table-pagination
+  [items]="[1, 2, 3]"
+  [total]="companiesList.length"
+></tui-table-pagination> -->
